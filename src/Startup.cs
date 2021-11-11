@@ -19,13 +19,15 @@ namespace NITRA_BOT_TWITCH
                 .AddSingleton(_config)
                 .AddSingleton<BadwordsList>()
                 .AddSingleton<Api>()
-                .AddSingleton<Core>();
+                .AddSingleton<Core>()
+                .AddSingleton<Events>();
 
             var serviceProvider = services.BuildServiceProvider();
 
             serviceProvider.GetRequiredService<BadwordsList>();
             serviceProvider.GetRequiredService<Api>();
             serviceProvider.GetRequiredService<Core>();
+            serviceProvider.GetRequiredService<Events>();
         }
     }
 }
